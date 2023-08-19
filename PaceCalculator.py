@@ -17,14 +17,17 @@ if time >= 1.0:
     
     # Total time in minutes
     total_time_minutes = hours + total_minutes
+else:
+    total_time_minutes = time * 100
 
-print('minutes:',minutes)
-print('hours:',hours)
-print('total time:',total_time_minutes)
+print(total_time_minutes)
 
+
+# Getting distance
 distance = input('Pleace enter distance ran in kilometers:')
 distance = float(distance)
 print(distance)
 
+# Calculating pace
 pace = round(total_time_minutes/distance,2)
 print('Your pace was:', pace)
