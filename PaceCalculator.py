@@ -22,12 +22,12 @@ else:
 
 print(total_time_minutes)
 
-
 # Getting distance
-distance = input('Pleace enter distance ran in kilometers:')
+format = input('miles or kilometers?')
+distance = input('Pleace enter distance ran in format 0.0 miles or kilometers:')
 distance = float(distance)
 print(distance)
 
 # Calculating pace
 pace = round(total_time_minutes/distance,2)
-print('Your pace was:', pace)
+print('Your pace was:', pace, f'm/{format}')
