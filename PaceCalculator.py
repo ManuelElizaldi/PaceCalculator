@@ -1,33 +1,48 @@
-# Getting input to know if its miles or kms 
-#measurement = input('What are you measuring?')
+# ### Example run:
+# - Distance 21.01 km
+# - Pace 7:49/km
+# - Time 2h 44m
 
-# First we start by getting the time and coverting to mintues - remember, pace is measured in mins
-time = input('Please enter total time in the following format h.m:')
-time = float(time)
-
-# We need to be able to handle hours and minutes
-if time >= 1.0:
-    # Handling minutes
-    minutes = time - 1
-    total_minutes = round(minutes * 100)
-
-    # Handling hours
-    hours = time - minutes
-    hours = hours * 60
+try:
+    # Asking user for this time
+    time = input('Enter your time in the following format: hours, minutes, seconds')
+    time = time.split(',')
     
-    # Total time in minutes
-    total_time_minutes = hours + total_minutes
-else:
-    total_time_minutes = time * 100
+    # From the input, getting the hours, minutes and seconds
+    hours = float(time[0])
+    minutes = float(time[1])
+    seconds = float(time[2])
+    
+except:
+    print('Please enter time in the correct format: h,m,s')
 
-print(total_time_minutes)
+distance = float(input('What distance did you run? Format: 0.0'))
+format = input('Are you measuring in kilometers or miles? Please enter: km or m')
 
-# Getting distance
-format = input('miles or kilometers?')
-distance = input('Pleace enter distance ran in format 0.0 miles or kilometers:')
-distance = float(distance)
-print(distance)
+
+# Converting seconds to decimals
+seconds = seconds/100
+
+# Convert hours to minutes
+hours = 2 
+hours2minutes = hours * 60
+minutes = hours2minutes + minutes
+
 
 # Calculating pace
-pace = round(total_time_minutes/distance,2)
-print('Your pace was:', pace, f'm/{format}')
+pace = minutes/distance
+conversion_pace = pace
+
+# Converting pace decimals into actual minutes
+pace_decimals = pace % 1
+pace_decimals = (pace_decimals * 60)/100
+
+pace = round(pace - (pace%1) + pace_decimals,2)
+
+
+# Printing pace
+print(f'Your was: {pace}/{format}')
+
+
+# Converting pace to the opposite format. i.e. km -> m or m -> km
+conversion_pace
