@@ -3,6 +3,12 @@ import streamlit as st
 st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon_Test.jpg", layout="wide")
 
 # Header
+st.subheader("Pace Calculator")
+
+distance = st.text_input("What distance did you run?")
+format = st.text_input("Are you measuring in kilometers or miles?")
+
+# Header
 st.subheader("Pace Converter")
 
 # Drop box -> selection if km or m
