@@ -20,6 +20,7 @@ default_time = '2,44,0'
 time = st.text_input("What was your time? Please enter format h,m,s:", default_time)
 st.write('Example: *write what to do if mins = 0* ')
 
+# Time variable is a string, we can split it into parts [2,44,0] with split, then handle each time part
 time_parts = time.split(',')
 
 if len(time_parts) == 3:
@@ -40,9 +41,12 @@ measurement = st.selectbox('Are you measuring in kilometer or miles?', options=[
 
 # Calculating pace
 # time, distance, measurement
-pace = paceCalculator(time, distance, measurement)
-st.write('Your running pace was:',pace,'minutes per ', measurement)
-
+try:
+    pace = paceCalculator(time, distance, measurement)
+    st.write('Your running pace was:',pace,'minutes per ', measurement)
+except ValueError:
+    st.write('Please enter values in the right format.')
+    
 # # Header
 st.subheader("Pace Converter")
 
