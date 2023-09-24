@@ -1,7 +1,12 @@
 def paceCalculator(time, distance, measurement):
+    time = time.split(',')
+    # Getting time values
     hours = float(time[0])
     minutes = float(time[1])
     seconds = float(time[2])
+    
+    # Formatting distance value
+    distance = float(distance.replace(',', '.'))
     
     if hours > 0:
         # Converting seconds to decimals
@@ -13,7 +18,7 @@ def paceCalculator(time, distance, measurement):
         minutes = hours2minutes + minutes
 
         # Calculating pace
-        pace = minutes/distance
+        pace = minutes/float(distance)
 
         # Converting pace decimals into actual minutes
         pace_decimals = pace % 1
