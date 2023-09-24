@@ -16,9 +16,9 @@ st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon
 st.subheader("Pace Calculator")
 
 # Getting time variable
-
-time = st.text_input("What was your time? Please enter format h,m,s:")
-st.write('Example: 2,44,0')
+default_time = '2,44,0'
+time = st.text_input("What was your time? Please enter format h,m,s:", default_time)
+st.write('Example: *write what to do if mins = 0* ')
 
 time_parts = time.split(',')
 
@@ -33,7 +33,8 @@ else:
     st.write("Invalid time format. Please enter hours, minutes, and seconds separated by commas.")
 
 # Distance
-distance = st.text_input("What distance did you run? Please enter format: 0,0")
+default_distance = '21.01'
+distance = st.text_input("What distance did you run? Please enter format: 0,0", default_distance)
 # Km or mi
 measurement = st.selectbox('Are you measuring in kilometer or miles?', options=["Kilometers","Miles"])
 
