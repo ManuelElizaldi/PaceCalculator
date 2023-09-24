@@ -1,5 +1,5 @@
 import streamlit as st
-from paceConverter import *
+from Functions import *
 
 st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon_Test.jpg", layout="wide")
 
@@ -13,7 +13,7 @@ time = st.text_input("What was your time? Please enter format h,m,s:")
 # Drop box -> selection if km or m
 measurement = st.selectbox('Are you measuring in kilometer or miles?', options=["Kilometers","Miles"])
 
-
+# Calculating pace
 pace = paceCalculator(time, distance, measurement)
 
 st.write('Your pace is:', pace)
