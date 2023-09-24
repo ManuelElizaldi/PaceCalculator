@@ -20,18 +20,7 @@ default_time = '2,44,0'
 time = st.text_input("What was your time? Please enter format h,m,s:", default_time)
 st.write('Example: *write what to do if mins = 0* ')
 
-# Time variable is a string, we can split it into parts [2,44,0] with split, then handle each time part
-time_parts = time.split(',')
 
-if len(time_parts) == 3:
-    try:
-        hours = float(time_parts[0])
-        minutes = float(time_parts[1])
-        seconds = float(time_parts[2])
-    except ValueError:
-        st.write("Invalid time format. Please enter hours, minutes, and seconds as numbers.")
-else:
-    st.write("Invalid time format. Please enter hours, minutes, and seconds separated by commas.")
 
 # Distance
 default_distance = '21.01'
@@ -39,14 +28,16 @@ distance = st.text_input("What distance did you run? Please enter format: 0,0", 
 # Km or mi
 measurement = st.selectbox('Are you measuring in kilometer or miles?', options=["Kilometers","Miles"])
 
-# Calculating pace
+# Calculating pace with function from Functions.py file
 # time, distance, measurement
 try:
     pace = paceCalculator(time, distance, measurement)
-    st.write('Your running pace was:',pace,'minutes per ', measurement)
-except ValueError:
-    st.write('Please enter values in the right format.')
     
+except ValueError as e:
+    pace = str(e)
+    st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
+
+st.write('Your running pace was:',pace,'minutes per ', measurement)    
 # # Header
 st.subheader("Pace Converter")
 

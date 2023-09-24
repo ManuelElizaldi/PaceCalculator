@@ -1,58 +1,69 @@
 def paceCalculator(time, distance, measurement):
-    time = time.split(',')
-    # Getting time values
-    hours = float(time[0])
-    minutes = float(time[1])
-    seconds = float(time[2])
+    import streamlit as st
     
-    # Formatting distance value
-    distance = float(distance.replace(',', '.'))
-    
-    if hours > 0:
-        # Converting seconds to decimals
-        seconds = seconds/100
-
-        # Convert hours to minutes
-        hours = 2 
-        hours2minutes = hours * 60
-        minutes = hours2minutes + minutes
-
-        # Calculating pace
-        pace = minutes/float(distance)
-
-        # Converting pace decimals into actual minutes
-        pace_decimals = pace % 1
-        pace_decimals = (pace_decimals * 60)/100
-
-        pace = round(pace - (pace%1) + pace_decimals,2)
-    
-# Need to create code to handle when 0,x,x
-    else:
-        # Converting seconds to decimals
-        seconds = seconds/100
-        minutes = minutes + seconds
+    # Time variable is a string, we can split it into parts [2,44,0] with split, then handle each time part
+    try:
+        time = time.split(',')
+        if len(time) != 3:
+            raise ValueError('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
         
-        # Calculating pace
-        pace = minutes/distance
+        # Getting time values
+        hours = float(time[0])
+        minutes = float(time[1])
+        seconds = float(time[2])
 
-        # Converting pace decimals into actual minutes 
-        pace_decimals = pace % 1
-        pace_decimals = (pace_decimals * 60)/100
+    
+        # Formatting distance value
+        distance = float(distance.replace(',', '.'))
+        if hours > 0:
+            # Converting seconds to decimals
+            seconds = seconds/100
 
-        pace = round(pace - (pace%1) + pace_decimals)
+            # Convert hours to minutes
+            hours2minutes = hours * 60
+            minutes = hours2minutes + minutes
+
+            # Calculating pace
+            pace = minutes/float(distance)
+
+            # Converting pace decimals into actual minutes
+            pace_decimals = pace % 1
+            pace_decimals = (pace_decimals * 60)/100
+
+            pace = round(pace - (pace%1) + pace_decimals,2)
+            
+        # Need to create code to handle when 0,x,x
+        else:
+            # Converting seconds to decimals
+            seconds = seconds/100
+            minutes = minutes + seconds
+            
+            # Calculating pace
+            pace = minutes/distance
+
+            # Converting pace decimals into actual minutes 
+            pace_decimals = pace % 1
+            pace_decimals = (pace_decimals * 60)/100
+
+            pace = round(pace - (pace%1) + pace_decimals)
         
-        # Printing pace
-    print(f'Your was: {pace}/{measurement}')
-    return pace
+        return pace    
+        
+    except ValueError as e:
+        return str(e)
+    except ZeroDivisionError:
+        return 'Division by zero is not allowed'        
+
 
 def paceConverter(measurement, pace):
+    import streamlit as st
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
     if measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
         pace_conversion = pace * 1.6093491499172796
-        print('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
+        st.write('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
 
     elif measurement == 'mi' or measurement == 'miles' or measurement == 'm':
         pace_conversion = pace / 1.6093491499172796
-        print('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
+        st.write('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
         
     return pace_conversion
