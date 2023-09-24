@@ -43,9 +43,11 @@ def paceCalculator(time, distance, measurement):
 def paceConverter(measurement, pace):
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
     if measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
-        pace_in_miles = pace * 1.6093491499172796
-        print('Your pace in miles is:',round(pace_in_miles,3), 'minutes per mile')
+        pace_conversion = pace * 1.6093491499172796
+        print('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
 
     elif measurement == 'mi' or measurement == 'miles' or measurement == 'm':
-        pace_in_kilometers = pace / 1.6093491499172796
-        print('Your pace in kilometers is:',round(pace_in_kilometers,3), 'minutes per kilometers')
+        pace_conversion = pace / 1.6093491499172796
+        print('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
+        
+    return pace_conversion
