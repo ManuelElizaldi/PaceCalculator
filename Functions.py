@@ -8,7 +8,7 @@ def paceCalculator(time, distance, measurement):
             raise ValueError('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
   
         # Getting time values
-        
+
         hours = float(time[0])
         minutes = float(time[1])
         seconds = float(time[2])
@@ -59,13 +59,21 @@ def paceCalculator(time, distance, measurement):
 
 def paceConverter(measurement, pace):
     import streamlit as st
+    try:
+        # Handling some string stuff
+        pace = float(pace.replace(',', '.'))
+        pace = float(pace)
+    
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
-    if measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
-        pace_conversion = pace * 1.6093491499172796
-        st.write('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
+        if measurement == 'Kilometer' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
+            pace_conversion = pace * 1.6093491499172796
+            st.write('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
 
-    elif measurement == 'mi' or measurement == 'miles' or measurement == 'm':
-        pace_conversion = pace / 1.6093491499172796
-        st.write('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
-        
-    return pace_conversion
+        elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
+            pace_conversion = pace / 1.6093491499172796
+            st.write('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
+    
+    except ValueError:
+        st.write('Invalid pace format. Please enter 0,0.')
+    except ZeroDivisionError:
+        return 'Division by zero is not allowed'

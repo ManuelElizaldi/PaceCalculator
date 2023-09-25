@@ -12,18 +12,26 @@ from Functions import *
 
 st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon_Test.jpg", layout="wide")
     
-# # Header
+# Pace conversion section
 st.subheader("Pace Converter")
 
-# # Drop box -> selection if km or m
-st.selectbox('What was your format, km or mi?', options=["Kilometers","Miles"])
+# Drop box -> selection if km or m
+measurement_conver = st.selectbox('What was your format, km or mi?', options=["Kilometers","Miles"])
 
-# # Enter pace here
-title = st.text_input("What was your pace?")
+# Enter pace here
+default_pace = '7.48'
+pace_conver = st.text_input("What was your pace?", default_pace)
 
-st.write('Your pace is:', title)
+# Applying function for conversion
+pace_conversion = paceConverter(measurement_conver, pace_conver)
 
-# Header
+# Need to add print statement here for km or mi:
+if measurement_conver == 'Kilometer':
+    st.write('Your pace is:', pace_conver)
+elif measurement_conver == 'Miles':
+    st.write('Your pace is:', pace_conver)
+
+# Pace calculator secion
 st.subheader("Pace Calculator")
 
 # Getting time variable
@@ -35,7 +43,6 @@ default_distance = '21.01'
 distance = st.text_input("What distance did you run? Please enter value separated by commas: 0,0", default_distance)
 # Km or mi
 measurement = st.selectbox('Are you measuring in kilometer or miles?', options=["Kilometers","Miles"])
-
 # Calculating pace with function from Functions.py file
 # time, distance, measurement
 try:
