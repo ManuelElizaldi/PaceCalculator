@@ -8,6 +8,7 @@
 # - Pace 7:20/km
 # - Time 47m 16s
 import streamlit as st
+import pandas as pd
 from Functions import *
 
 st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon_Test.jpg", layout="wide")
@@ -49,7 +50,7 @@ except ValueError as e:
     pace = str(e)
     st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
     
-# Common pace and times table
+# Common pace and times table, getting data from excel file
+df = pd.read_csv(r'C:\Users\USER\Desktop\Learning\PaceConverter\Resources\CommonPaces.csv')
+st.dataframe(df.set_index(df.columns[0]))
 
-
-st.table(table_data)
