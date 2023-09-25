@@ -5,7 +5,7 @@ def paceCalculator(time, distance, measurement):
     try:
         time = time.split(',')
         if len(time) != 3:
-            raise ValueError('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
+            st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
   
         # Getting time values
 

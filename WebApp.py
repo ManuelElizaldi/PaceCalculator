@@ -23,13 +23,17 @@ default_pace = '7.48'
 pace_conver = st.text_input("What was your pace?", default_pace)
 
 # Applying function for conversion
-pace_conversion = paceConverter(measurement_conver, pace_conver)
+try:
+    pace_conversion = paceConverter(measurement_conver, pace_conver)
+    if measurement_conver == 'Kilometer':
+        st.write('Your pace is:', pace_conver, 'Miles per minute')
+    elif measurement_conver == 'Miles':
+        st.write('Your pace is:', pace_conver, 'Kilometers per minute')
+except:
+    st.write('Please enter your pace in the correct format: 0,0')
 
 # Need to add print statement here for km or mi:
-if measurement_conver == 'Kilometer':
-    st.write('Your pace is:', pace_conver)
-elif measurement_conver == 'Miles':
-    st.write('Your pace is:', pace_conver)
+
 
 # Pace calculator secion
 st.subheader("Pace Calculator")
