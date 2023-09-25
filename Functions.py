@@ -6,12 +6,14 @@ def paceCalculator(time, distance, measurement):
         time = time.split(',')
         if len(time) != 3:
             st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
-  
+            hours = float(time[0])
+            minutes = 0
+            seconds = 0
         # Getting time values
-
-        hours = float(time[0])
-        minutes = float(time[1])
-        seconds = float(time[2])
+        else:
+            hours = float(time[0])
+            minutes = float(time[1])
+            seconds = float(time[2])
 
     
         # Formatting distance value
