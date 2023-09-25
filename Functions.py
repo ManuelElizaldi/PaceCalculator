@@ -6,8 +6,9 @@ def paceCalculator(time, distance, measurement):
         time = time.split(',')
         if len(time) != 3:
             raise ValueError('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
-        
+  
         # Getting time values
+        
         hours = float(time[0])
         minutes = float(time[1])
         seconds = float(time[2])
@@ -46,7 +47,8 @@ def paceCalculator(time, distance, measurement):
             pace_decimals = (pace_decimals * 60)/100
 
             pace = round(pace - (pace%1) + pace_decimals)
-        
+            
+        st.write('Your running pace was:',pace,'minutes per ', measurement)
         return pace    
         
     except ValueError as e:
