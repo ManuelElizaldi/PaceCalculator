@@ -25,15 +25,8 @@ pace_conver = st.text_input("What was your pace?", default_pace)
 # Applying function for conversion
 try:
     pace_conversion = paceConverter(measurement_conver, pace_conver)
-    if measurement_conver == 'Kilometer':
-        st.write('Your pace is:', pace_conver, 'Miles per minute')
-    elif measurement_conver == 'Miles':
-        st.write('Your pace is:', pace_conver, 'Kilometers per minute')
 except:
-    st.write('Please enter your pace in the correct format: 0,0')
-
-# Need to add print statement here for km or mi:
-
+    st.write('Please enter your pace in the correct format: 0.0')
 
 # Pace calculator secion
 st.subheader("Pace Calculator")

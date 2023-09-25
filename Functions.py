@@ -65,7 +65,7 @@ def paceConverter(measurement, pace):
         pace = float(pace)
     
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
-        if measurement == 'Kilometer' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
+        if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
             pace_conversion = pace * 1.6093491499172796
             st.write('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
 
@@ -74,6 +74,6 @@ def paceConverter(measurement, pace):
             st.write('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
     
     except ValueError:
-        st.write('Invalid pace format. Please enter 0,0.')
+        st.write('Invalid pace format. Please enter 0.0.')
     except ZeroDivisionError:
         return 'Division by zero is not allowed'
