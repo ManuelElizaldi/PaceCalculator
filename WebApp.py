@@ -48,3 +48,8 @@ try:
 except ValueError as e:
     pace = str(e)
     st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
+    
+# Common pace and times table
+
+
+st.table(table_data)
