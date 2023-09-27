@@ -11,13 +11,13 @@ import streamlit as st
 import pandas as pd
 from Functions import *
 
-st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon_Test.jpg", layout="wide")
+st.set_page_config(page_title="Pace Converter", page_icon="Resources/RunningIcon_Test.jpg", layout="wide")
     
 # Pace conversion section
 st.subheader("Pace Converter")
 
 # Drop box -> selection if km or m
-measurement_conver = st.selectbox('What was your format, km or mi?', options=["Kilometers","Miles"])
+measurement_conver = st.selectbox('Are you measuring in kilometers or miles?', options=["Kilometers","Miles"])
 
 # Enter pace here
 default_pace = '7.48'
