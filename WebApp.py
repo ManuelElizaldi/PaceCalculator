@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 from Functions import *
 
-st.set_page_config(page_title="Pace Converter", page_icon="Resources/RunningIcon_Test.jpg", layout="wide")
+st.set_page_config(page_title="Pace Converter", page_icon="RunningIcon_Test.jpg", layout="center", menu_items=None)
     
 # Pace conversion section
 st.subheader("Pace Converter")
