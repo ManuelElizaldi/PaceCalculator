@@ -34,7 +34,7 @@ st.subheader("Pace Calculator")
 
 # Getting time variable
 default_time = '2:44:0'
-time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by ':'.", default_time)
+time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by ':'", default_time)
 
 # Distance
 default_distance = '21.01'
@@ -48,7 +48,7 @@ try:
     
 except ValueError as e:
     pace = str(e)
-    st.write('Invalid time format. Please enter hours, minutes, and seconds separated by ":".')
+    st.write('Invalid time format. Please enter hours, minutes, and seconds separated by ":"')
     
 # Common pace and times table, getting data from excel file
 df = pd.DataFrame(df)
