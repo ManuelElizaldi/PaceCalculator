@@ -17,7 +17,7 @@ st.set_page_config(page_title="Pace Converter", page_icon="Resources\RunningIcon
 st.subheader("Pace Converter")
 
 # Drop box -> selection if km or m
-measurement_conver = st.selectbox('What was your format, km or mi?', options=["Kilometers","Miles"])
+measurement_conver = st.selectbox('Are you measuring in Miles or Kilometers?', options=["Kilometers","Miles"])
 
 # Enter pace here
 default_pace = '7.48'
@@ -33,8 +33,8 @@ except:
 st.subheader("Pace Calculator")
 
 # Getting time variable
-default_time = '2,44,0'
-time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by commas.", default_time)
+default_time = '2:44:0'
+time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by ':'.", default_time)
 
 # Distance
 default_distance = '21.01'
@@ -48,7 +48,7 @@ try:
     
 except ValueError as e:
     pace = str(e)
-    st.write('Invalid time format. Please enter hours, minutes, and seconds separated by commas.')
+    st.write('Invalid time format. Please enter hours, minutes, and seconds separated by ":".')
     
 # Common pace and times table, getting data from excel file
 df = pd.DataFrame(df)

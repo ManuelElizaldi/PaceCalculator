@@ -64,17 +64,17 @@ def paceConverter(measurement, pace):
     import streamlit as st
     try:
         # Handling some string stuff
-        pace = float(pace.replace(',', '.'))
+        pace = float(pace.replace(',', '.').replace(':','.'))
         pace = float(pace)
     
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
         if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
             pace_conversion = pace * 1.6093491499172796
-            st.write('Your pace in miles is:',round(pace_conversion,3), 'minutes per mile')
+            st.write('Your pace is:',round(pace_conversion,3), 'minutes per mile')
 
         elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
             pace_conversion = pace / 1.6093491499172796
-            st.write('Your pace in kilometers is:',round(pace_conversion,3), 'minutes per kilometers')
+            st.write('Your pace is:',round(pace_conversion,3), 'minutes per kilometers')
     
     except ValueError:
         st.write('Invalid pace format. Please enter 0.0.')
