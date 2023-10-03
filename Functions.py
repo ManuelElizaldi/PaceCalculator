@@ -5,7 +5,7 @@ def paceCalculator(time, distance, measurement):
     
     # Time variable is a string, we can split it into parts [2,44,0] with split, then handle each time part
     try:
-        time = time.split(',')
+        time = time.split(':')
         if len(time) != 3:
             hours = float(time[0])
             minutes = 0
@@ -75,11 +75,15 @@ def paceConverter(measurement, pace):
         elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
             pace_conversion = pace / 1.6093491499172796
             st.write('Your pace is:',round(pace_conversion,3), 'minutes per kilometers')
+        return pace_conversion
     
     except ValueError:
         st.write('Invalid pace format. Please enter 0.0.')
     except ZeroDivisionError:
         return 'Division by zero is not allowed'
+    
+    
+
 
 df = [
 {
