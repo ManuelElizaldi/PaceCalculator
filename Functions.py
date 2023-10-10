@@ -69,11 +69,11 @@ def paceConverter(measurement, pace):
     
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
         if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
-            pace_conversion = pace * 1.6093491499172796
+            pace_conversion = (pace * 1.6093491499172796) - ((pace * 1.6093491499172796)%1) +  ((((pace * 1.6093491499172796)%1) * 60)/100)
             st.write('Your pace is:',round(pace_conversion,3), 'minutes per mile')
 
         elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
-            pace_conversion = pace / 1.6093491499172796
+            pace_conversion = (pace - pace%1 + (pace%1*100)/60)/1.6093491499172796
             st.write('Your pace is:',round(pace_conversion,3), 'minutes per kilometers')
         return pace_conversion
     
