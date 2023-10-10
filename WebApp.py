@@ -34,7 +34,7 @@ st.subheader("Pace Calculator")
 
 # Getting time variable
 default_time = '2:44:0'
-time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by ':'", default_time)
+time = st.text_input("What was your time? Please enter hours, minutes, and seconds separated by ':'. h:m:s", default_time)
 
 # Distance
 default_distance = '21.01'
