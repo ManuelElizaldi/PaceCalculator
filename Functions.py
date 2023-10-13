@@ -88,12 +88,12 @@ def UnitConverter(measurement, distance):
         distance = float(distance.replace(',', '.').replace(':', '.'))
 
         if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
-            result = distance * 1.6
-            st.write(f'Your distance in miles is: {round(result, 2)}')
+            result = distance * 0.621371
+            st.write(f'Your distance in miles is:',round(result, 2))
 
         elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
-            result = distance / 1.6
-            st.write(f'Your distance in kilometers is: {round(result, 2)}')
+            result = distance * 1.6
+            st.write(f'Your distance in kilometers is:', round(result, 2))
         
         return result
 
