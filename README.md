@@ -20,4 +20,4 @@ When I first started developing the website for this project, I faced a roadbloc
 
 ## Future Plans For This Project
 ### Make sure you ⭐ this project, I plan to add new features! 
-My next step for this project is to build an app that can be downloaded to android phones (possibly iphones too) and that can be used without using internet. 
+My next step for this project is to build an app that can be downloaded to Android phones (and possibly iPhones too) and that can be used without an internet connection.
