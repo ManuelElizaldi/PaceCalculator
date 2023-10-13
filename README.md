@@ -2,7 +2,7 @@
 <img src="img\Running-Banner.jpg" alt="Your Image" width:640 height:426p >
 
 ## Project Description
-The idea for this project was born from the constant discomfort that came with trying to compare my running pace to my friends'. I have trained all my life measuring my runs in kilometers, but my friends use miles. After every run me and my friends would discuss our workout, and it was hard to understand each other, not knowing how hard we had trained. So, I decided to take this inconvenience into my hands and build a tool that would solve our measurement translation barrier. 
+The idea for this project was born from the constant discomfort that came with trying to compare my running pace to my friends'. I have trained all my life measuring my runs in kilometers, but my friends use miles. After every run me and my friends would discuss our workout, and it was complicated to understand each other, not knowing how hard we had trained. So, I decided to take this inconvenience as a coding challenge and build a tool that would solve our measurement translation problem. 
 
 ## Overview
 The web app was build using the package streamlit (version 1.27.2) and deployed with [Render](https://render.com/). 
