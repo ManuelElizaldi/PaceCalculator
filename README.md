@@ -13,7 +13,7 @@ The web app has 3 sections:
 - Pace Calculator: If you don't know how was you were running, in this section you can enter your distance and time and you'll recieve your running pace. 
 - Unit Conversion: Lastely, this section will convert from kilometers to miles and conversely.
 
-You can access the web app here: [Running Pace Calculator](https://runningpacecalculator.onrender.com/)
+You can use this tool here : [Running Pace Calculator](https://runningpacecalculator.onrender.com/)
 
 ## Conclusion and Knowledge Gained
 When I first started developing the website for this project, I faced a roadblock that offered me a lesson. Initially, I planned to use Heroku to deploy my web app but soon realized that their free-tier service was terminated. I was determined, and this obstacle was not going to stop me. I still wanted to build my project, so I did some research on potential alternatives and found out about a couple of options. Ultimately, I decided on Render since the deployment process was fairly simple. My lesson here was to not give up if your plan does not work. You need to be adaptable and able to learn on the go. As Bruce Lee famously said, "Be like water"; don't get contained in one technology, embrace the freedom of trying other options.
