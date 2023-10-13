@@ -2,14 +2,16 @@
 <img src="img\Running-Banner.jpg" alt="Your Image" width:640 height:426p >
 
 ## Project Description
-The idea for this project was born from the constant 'pain' that came with trying to compare my running pace to my friends'. I measure my runs in kilometers, but my friends use miles. After every run me and my friends would discuss our workout and it was hard to understand eachother, so I decided to build a tool that would convert our running paces. 
+The idea for this project was born from the constant 'pain' that came with trying to compare my running pace to my friends'. I measure my runs in kilometers, but my friends use miles. After every run me and my friends would discuss our workout and it was hard to understand each other, so I decided to build a tool that would convert our running paces. 
 
 ## Overview
-The web app was build using the package streamlit (version 1.27.2) and deployed on [Render](https://render.com/). 
+The web app was build using the package streamlit (version 1.27.2) and deployed with [Render](https://render.com/). 
 Additionally Pandas (version 2.0.3) was used for some data handling. 
 
-
-
+The web app has 3 sections:
+- Pace Converter
+- Pace Calculator
+- Unit Conversion 
 You can access the web app here: [Running Pace Calculator](https://runningpacecalculator.onrender.com/)
 
 
