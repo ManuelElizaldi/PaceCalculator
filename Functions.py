@@ -1,7 +1,7 @@
 import pandas as pd
+import streamlit as st
 
 def paceCalculator(time, distance, measurement):
-    import streamlit as st
     
     # Time variable is a string, we can split it into parts [2,44,0] with split, then handle each time part
     try:
@@ -61,18 +61,18 @@ def paceCalculator(time, distance, measurement):
 
 
 def paceConverter(measurement, pace):
-    import streamlit as st
     try:
         # Handling some string stuff
         pace = float(pace.replace(',', '.').replace(':','.'))
-        pace = float(pace)
     
 # Converting pace to the opposite measurement. i.e. km -> m or m -> km
         if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
+            # here we are converting to miles and then handling time format
             pace_conversion = (pace * 1.6093491499172796) - ((pace * 1.6093491499172796)%1) +  ((((pace * 1.6093491499172796)%1) * 60)/100)
             st.write('Your pace is:',round(pace_conversion,3), 'minutes per mile')
 
         elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
+            # in this formula first, we convert pace to time format then we do the conversion
             pace_conversion = (pace - pace%1 + (pace%1*100)/60)/1.6093491499172796
             st.write('Your pace is:',round(pace_conversion,3), 'minutes per kilometers')
         return pace_conversion
@@ -82,7 +82,23 @@ def paceConverter(measurement, pace):
     except ZeroDivisionError:
         return 'Division by zero is not allowed'
     
-    
+def UnitConverter(measurement, distance):
+    try:
+        # Handling some string stuff
+        distance = float(distance.replace(',', '.').replace(':', '.'))
+
+        if measurement == 'Kilometers' or measurement == 'km' or measurement == 'kilometer' or measurement == 'k':
+            result = distance * 1.6
+            st.write(f'Your distance in miles is: {round(result, 2)}')
+
+        elif measurement == 'Miles' or measurement == 'mi' or measurement == 'miles' or measurement == 'm':
+            result = distance / 1.6
+            st.write(f'Your distance in kilometers is: {round(result, 2)}')
+        
+        return result
+
+    except ValueError:
+        st.write('Invalid distance format. Please enter 0.0.')
 
 
 df = [

@@ -50,6 +50,24 @@ except ValueError as e:
     pace = str(e)
     st.write('Invalid time format. Please enter hours, minutes, and seconds separated by ":"')
     
+# Km to mile converter     
+st.subheader("Unit Conversion")
+
+# Drop box -> selection if km or m 
+conversion = st.selectbox('From', options=["Kilometers","Miles"])
+distance_to_convert = st.text_input("Enter your distance", '10')
+
+result = UnitConverter(conversion, distance_to_convert)
+
+# try:
+#     distance_conversion = UnitConverter(conversion, distance_to_convert)
+    
+# except ValueError as e:
+#     distance_conversion = str(e)
+#     st.write('Invalid unit format. Please enter a number.')
+
+st.write()
+
 # Common pace and times table, getting data from excel file
 df = pd.DataFrame(df)
 st.dataframe(df.set_index(df.columns[0]))
