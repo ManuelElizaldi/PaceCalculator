@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="center">
-    <img src="img\Running-Banner.jpg" alt="Your Image" style="width:300px;height:300px;">
+    <img src="img\Running-Banner.jpg" alt="Your Image" style="width:640px;height:426px;">
 </div>
 </body>
 </html>
