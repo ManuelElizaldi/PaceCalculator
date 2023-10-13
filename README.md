@@ -16,3 +16,6 @@ The web app has 3 sections:
 You can access the web app here: [Running Pace Calculator](https://runningpacecalculator.onrender.com/)
 
 ## Conclusion and Knowledge Gained
+
+## Future Plans For This Project
+My next step for this project is to build an app that can be used in android phones (possibly iphones too) without needing access to the internet. 
