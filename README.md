@@ -1,21 +1,5 @@
 # RunningPaceCalculator
-<html>
-<head>
-    <style>
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    </style>
-</head>
-<body>
-<div class="center">
-    <img src="img\Running-Banner.jpg" alt="Your Image" width:640height:426p >
-</div>
-</body>
-</html>
+<img src="img\Running-Banner.jpg" alt="Your Image" width:640 height:426p >
 
 ## Project Description
 The idea for this project was born from the constant 'pain' that came with trying to compare my running pace to my friends'. I measure my runs in kilometers, but my friends use miles. After every run me and my friends would discuss our workout and it was hard to understand eachother, so I decided to build a tool that would convert our running paces. 
