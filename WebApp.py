@@ -64,7 +64,8 @@ except ValueError as e:
     distance_conversion = str(e)
     st.write('Invalid unit format. Please enter a number.')
 
-# Common pace and times table, getting data from excel file
+# Common pace and times table, getting data from excel file 
+st.write('Common Pace and Times Table')
 df = pd.DataFrame(df)
 st.dataframe(df.set_index(df.columns[0]))
 
