@@ -14,7 +14,7 @@ from Functions import *
 st.set_page_config(page_title="Pace Converter", page_icon="RunningIcon_Test.jpg", layout="centered", menu_items=None)
     
 # Pace conversion section
-st.subheader("Pace Converter")
+st.markdown("<h3 style='text-align: center;'>Pace Converter</h3>", unsafe_allow_html=True)
 
 # Drop box -> selection if km or m
 measurement_conver = st.selectbox('Are you measuring in Miles or Kilometers?', options=["Kilometers","Miles"])
@@ -30,7 +30,7 @@ except:
     st.write('Please enter your pace in the correct format: 0.0')
 
 # Pace calculator secion
-st.subheader("Pace Calculator")
+st.markdown("<h3 style='text-align: center;'>Pace Calculator</h3>", unsafe_allow_html=True)
 
 # Getting time variable
 default_time = '2:44:0'
@@ -51,8 +51,7 @@ except ValueError as e:
     st.write('Invalid time format. Please enter hours, minutes, and seconds separated by ":"')
     
 # Km to mile converter     
-st.subheader("Unit Conversion")
-
+st.markdown("<h3 style='text-align: center;'>Unit Conversion</h3>", unsafe_allow_html=True)
 # Drop box -> selection if km or m 
 conversion = st.selectbox('Converting from', options=["Kilometers","Miles"])
 distance_to_convert = st.text_input("Enter your distance", '10')
@@ -65,7 +64,19 @@ except ValueError as e:
     st.write('Invalid unit format. Please enter a number.')
 
 # Common pace and times table, getting data from excel file 
-st.write('Common Pace and Times Table')
+st.markdown("<h3 style='text-align: center;'>Common Pace and Times Table</h3>", unsafe_allow_html=True)
 df = pd.DataFrame(df)
+# Define the CSS style for centering the dataframe
+centered_css = """
+<style>
+div.stDataFrame {
+    display: flex;
+    justify-content: center;
+}
+</style>
+"""
+
+# Render the dataframe with the CSS style applied
+st.markdown(centered_css, unsafe_allow_html=True)
 st.dataframe(df.set_index(df.columns[0]))
 
